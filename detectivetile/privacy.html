@@ -27,7 +27,7 @@
 <main>
 
 <h1>Privacy Policy — Detective Tile</h1>
-<p class="meta">Effective date: 16 September 2026 · Last updated: 16 September 2026</p>
+<p class="meta">Effective date: 16 September 2026 · Last updated: 10 November 2026</p>
 <p class="meta">App: Detective Tile (<code>com.lazorium.detectivetile</code>) · Developer: Lazorium</p>
 
 <p>This policy explains what Detective Tile collects, why, and what choices you have. It applies to the
@@ -38,7 +38,8 @@ Android and iOS versions of the game.</p>
   <li>The game has no accounts and no sign-up. We never ask for your name, email, phone number or address.</li>
   <li>We do not access your contacts, photos, microphone, camera or precise location.</li>
   <li>Your progress is stored on your own device.</li>
-  <li>We collect anonymous gameplay statistics and we show ads. Both are described below.</li>
+  <li>We collect pseudonymous gameplay and diagnostic statistics and show ads, as described below.</li>
+  <li>On iPhone and iPad, iOS asks for tracking permission when eligible. Your choice does not block gameplay.</li>
   <li>We do not sell your personal information.</li>
 </ul>
 
@@ -49,43 +50,47 @@ Android and iOS versions of the game.</p>
 problems and balance difficulty.</p>
 <table>
   <tr><th>Data</th><th>Details</th></tr>
-  <tr><td>A random player identifier created inside the game</td><td>Generated on first launch and stored in your local save. It is not your device ID, not your advertising ID, and not an account.</td></tr>
-  <tr><td>Gameplay events</td><td>Level started, completed or failed; progress through cases; in-game gold earned and spent; screens opened; boosters used.</td></tr>
+  <tr><td>Player and SDK identifiers</td><td>A random player identifier is created on first launch, saved locally and passed to GameAnalytics. It is not a game account. The SDK also uses its own identifier; on iOS its default identifier is IDFV. Depending on platform and permission, the provider may also receive an advertising identifier.</td></tr>
+  <tr><td>Gameplay events</td><td>Levels started, completed or failed; progress through cases and challenges; in-game Gold earned and spent; screens opened; boosters used; purchase, restore and advertising outcomes. We do not upload your complete saved game or personal files.</td></tr>
   <tr><td>Technical context</td><td>App version, platform, device model, operating system version, language, approximate country (derived from your IP address by the provider), session start and end times.</td></tr>
   <tr><td>Error reports</td><td>Technical details of a crash or an error inside the game.</td></tr>
 </table>
-<p>These events describe what happens in the game. They are not used to build an advertising profile about
-you and are not combined with your real-world identity.</p>
+<p>These events can be associated with the player or SDK identifier, so we describe them as pseudonymous, not anonymous. Gameplay analytics is held until the privacy check resolves. Where GDPR applies, it requires the relevant device-storage, measurement and GameAnalytics vendor consents; withdrawing those permissions stops subsequent event submission. The game does not ask for your real-world identity.</p>
 
 <h3>2. Advertising</h3>
 <p>The game shows banner, interstitial and rewarded video ads through Google AdMob. To deliver and measure
-ads, Google processes ad requests, impressions, clicks and your device's advertising identifier
-(Advertising ID on Android, IDFA on iOS).</p>
+ads, Google processes ad requests, impressions, clicks, device identifiers and diagnostic information, and may infer approximate location from your IP address. The game does not request GPS or precise location. On iOS, IDFA is available only if you authorize tracking.</p>
 <ul>
   <li><strong>With your consent</strong>, where consent is required, ads may be personalised: the advertising
       identifier may be used to select ads based on your interests.</li>
-  <li><strong>Without consent</strong>, the game shows non-personalised or limited ads instead. Ads do not
-      disappear, but they are chosen from context rather than from an advertising profile.</li>
+  <li><strong>Without consent</strong>, non-personalised or limited ads may remain available where the network permits them. Refusal does not prevent you from playing.</li>
+  <li>Active No Ads benefits remove banner and interstitial ads. Optional rewarded videos remain available.</li>
 </ul>
 <p>How Google uses data from apps that use its services is described at
 <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
 
+<p><strong>App Tracking Transparency.</strong> On iPhone and iPad, after Google’s privacy check (and its consent form, where one is required) and before advertising starts, the game requests Apple’s tracking authorization if the status is undetermined, ads may run and iOS permits the prompt. If you decline, IDFA stays unavailable and the game requests non-personalised ads. An existing or restricted status does not trigger another prompt. Change this choice in iOS Settings → Privacy &amp; Security → Tracking.</p>
+
 <h3>3. Purchases</h3>
 <p>Optional in-app purchases are processed by Google Play or the Apple App Store. Payment is handled entirely
 by the store: we never see your card number, billing address or any payment credential. The store returns a
-purchase confirmation so the game can unlock what you bought.</p>
+purchase confirmation, product and transaction identifiers, and subscription status so the game can deliver purchases and restore eligible rights. Unity IAP passes those transactions between the game and Apple StoreKit or Google Play Billing. Renewal, cancellation and refunds are handled by the billing store. Deleting the game does not cancel a subscription.</p>
 
 <h3>4. Data stored only on your device</h3>
 <p>Your progress, settings and purchase entitlements are saved in the app's own storage on your device.
-Deleting the app deletes that save.</p>
+The game has no account or cloud-save service of its own. Your device backup may include app data, depending on its settings. Deleting the app removes its local save; eligible store entitlements may be restored with the same store account.</p>
+
+<h3>5. Notifications and content downloads</h3>
+<p>With notification permission, the game schedules local reminders on your device. These are not server push messages; the current game does not register a remote push token. You can disable notifications in your device settings. Later cases and the Chinese font are downloaded over HTTPS. Hosting providers, including Cloudflare, receive ordinary connection information such as your IP address and the requested resource to serve these downloads; the game does not upload your progress to them.</p>
+<h3>6. Unity engine</h3>
+<p>The game uses Unity. Unity engine hardware statistics are enabled in the current build configuration and may send technical device and usage information to Unity. This is separate from the game's GameAnalytics event controls. See <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity's game-player privacy policy</a>.</p>
 
 <h2>Your choices</h2>
 
 <h3>If you are in the EEA, the United Kingdom or Switzerland</h3>
-<p>On first launch the game shows a consent form provided by Google. You can accept, refuse, or choose purposes
-and partners individually, and refusing is as easy as accepting. You can change your answer at any time in the
-game under <strong>Settings → Ad privacy options</strong>. If you refuse, ads become non-personalised and
-gameplay analytics is switched off.</p>
+<p>Google UMP checks privacy requirements when the game starts and shows a consent form when required for your region and the configured message. You can accept, refuse, or choose purposes
+and partners individually. You can change your answer at any time in the
+game under <strong>Settings → Ad privacy options</strong>, shown when required by UMP. Without the relevant GameAnalytics consents, gameplay analytics is switched off. Non-personalised or limited ads may still be available.</p>
 
 <h3>Everywhere else</h3>
 <p>Gameplay analytics and advertising run by default. You still have control:</p>
@@ -93,15 +98,17 @@ gameplay analytics is switched off.</p>
   <li>Android: <em>Settings → Privacy → Ads</em> lets you delete or reset your advertising ID, or opt out of
       ads personalisation.</li>
   <li>iOS: <em>Settings → Privacy &amp; Security → Tracking</em> controls whether apps may ask to track you, and
-      <em>Apple Advertising</em> controls personalised ads.</li>
+      <em>Apple Advertising</em> controls Apple’s own ads, separately from AdMob.</li>
   <li>You can email us at any time to ask for your gameplay data to be deleted — see Contact.</li>
 </ul>
 
 <h2>Who we share data with</h2>
 <table>
   <tr><th>Recipient</th><th>Purpose</th><th>Their policy</th></tr>
-  <tr><td>GameAnalytics ApS</td><td>Gameplay analytics</td><td><a href="https://gameanalytics.com/privacy/" rel="noopener">gameanalytics.com/privacy</a></td></tr>
+  <tr><td>GameAnalytics ApS</td><td>Gameplay analytics</td><td><a href="https://www.gameanalytics.com/trust/privacy-notice" rel="noopener">gameanalytics.com/trust/privacy-notice</a></td></tr>
   <tr><td>Google (AdMob)</td><td>Advertising and ad measurement</td><td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></td></tr>
+  <tr><td>Unity</td><td>Engine statistics and purchase infrastructure</td><td><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" rel="noopener">Unity</a></td></tr>
+  <tr><td>Cloudflare / content hosts</td><td>HTTPS delivery of additional game resources</td><td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare</a></td></tr>
   <tr><td>Google Play / Apple</td><td>App distribution and payments</td><td><a href="https://policies.google.com/privacy" rel="noopener">Google</a> · <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple</a></td></tr>
 </table>
 <p>We do not sell personal information, and we do not share it for cross-context behavioural advertising beyond
@@ -114,7 +121,7 @@ aggregated into statistics that can no longer be linked to a single player. Data
 until you delete the app.</p>
 
 <h2>Children</h2>
-<p>Detective Tile is not directed to children. We do not knowingly collect personal data from children under 13,
+<p>Detective Tile is intended for players aged 16 and over and is not directed to children. We do not knowingly collect personal data from children under 13,
 or under the age of digital consent in your country. If you believe a child has provided data to us, contact us
 and we will delete it.</p>
 
@@ -128,13 +135,12 @@ find your data; without it we may be unable to identify which records are yours.
 complain to your local data protection authority.</p>
 
 <h2>Changes to this policy</h2>
-<p>If this policy changes, the new version is published on this page with a new "last updated" date. Significant
-changes will also be announced in the game.</p>
+<p>If this policy changes, the new version is published on this page with a new "last updated" date. Where required, significant changes will be communicated and renewed consent requested.</p>
 
 <h2>Contact</h2>
 <p>Lazorium — <a href="mailto:lazoriumgames@gmail.com">lazoriumgames@gmail.com</a></p>
 
-<footer>This page describes the data practices of Detective Tile. It is not legal advice.</footer>
+<footer><a href="terms.html">Terms of Use</a> · Detective Tile by Lazorium</footer>
 
 </main>
 </body>
